@@ -19,8 +19,9 @@
                 <div class="row placeani">
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Login </label>
                             <div class="input-group">
-                                <label>Votre Login </label>
+                               
                                 <input type="text" ngModel #login="ngModel" name="username" class="form-control"  required >
                                 <p style="font-size: small;" *ngIf="login.invalid && login.touched" class="text-danger" >le champs nom est obligatoire </p>
                             </div>
@@ -28,8 +29,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Mot de passe </label>
                             <div class="input-group"> 
-                                <label>Votre Mot de passe </label>
+                               
                                 <input type="password" ngModel #password="ngModel" name="password" class="form-control" required>
                                 <p style="font-size: small;" *ngIf="password.invalid && password.touched" class="text-danger" >le champs nom est obligatoire </p>
                             </div>

@@ -2,6 +2,7 @@ import { Component, OnInit , ElementRef, ViewChild, Renderer2} from '@angular/co
 import { NgForm } from '@angular/forms';
 import { TaskService } from '../task.service';
 import { Router } from '@angular/router';
+declare var $: any;
 @Component({
   selector: 'app-ajouter-formation',
   templateUrl: './ajouter-formation.component.html',
@@ -50,6 +51,8 @@ if(!this.mots_cle.includes(text))
   this.renderer.setAttribute(a,"href","#");
   this.renderer.appendChild(this.div.nativeElement, a);
   this.mots_cle.push(text);
+ $("#motscle").val("");
+
   }
   else
   {

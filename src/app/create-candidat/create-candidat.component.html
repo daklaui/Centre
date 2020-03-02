@@ -27,8 +27,9 @@
                         <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
+                            <label>Votre Nom</label>
                             <div class="input-group">
-                                <label>Votre Nom</label>
+                               
                                 <input name="NomCandidat" ngModel type="text"  #nom_Candidat="ngModel" required class="form-control">
                                 <p style="font-size:small" *ngIf="nom_Candidat.invalid && nom_Candidat.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -36,8 +37,9 @@
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
+                            <label>Votre Prenom</label>
                             <div class="input-group">
-                                <label>Votre Prenom</label>
+                              
                                 <input ngModel type="text" #prenom_Candidat="ngModel" class="form-control" name="Prenom_Candidat"  required>
                                 <p style="font-size:small" *ngIf="prenom_Candidat.invalid && prenom_Candidat.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -47,8 +49,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Email</label>
                             <div class="input-group">
-                                <label>Votre Email</label>
+                             
                                 <input type="email" [email]="true" ngModel #email_Candidat="ngModel" class="form-control" name="Email_Candidat"  required>
                                 <p  style="font-size:small" *ngIf="email_Candidat.invalid && email_Candidat.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -56,8 +59,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Numero De Telephone</label>
                             <div class="input-group">
-                                <label>Votre Numero De Telephone</label>
+                                
                                 <input type="number" ngModel #tel_Candidat="ngModel"  class="form-control" name="Tel_Candidat"  required>
                                 <p style="font-size:small" *ngIf="tel_Candidat.invalid && tel_Candidat.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -65,8 +69,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Numero De Cin</label>
                             <div class="input-group">
-                                <label>Votre Numero De Cin</label>
+                            
                                 <input type="text" ngModel #cin_Candidat="ngModel" class="form-control" name="Cin_Candidat"  required>
                                 <p  style="font-size:small" *ngIf="cin_Candidat.invalid && cin_Candidat.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -75,8 +80,9 @@
                    
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Mot De Passe</label>
                             <div class="input-group"> 
-                                <label>Votre Mot De Passe</label>
+                              
                                 <input type="password" ngModel #passwd="ngModel" class="form-control" required name="passwd"  >
                                 <p style="font-size:small" *ngIf="passwd.invalid && passwd.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -84,8 +90,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Photo</label>
                             <div class="input-group">
-                                <label>Votre Photo</label>
+                               
                                 <input type="file" name="photo" ngModel #photo="ngModel"   class="form-control" (change)="fileProgressImage($event.target.files)" accept="image/*"  required />
                                 <p  style="font-size:small"*ngIf="photo.invalid && photo.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>
@@ -93,8 +100,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <label>Votre Cv</label>
                             <div class="input-group">
-                                <label>Votre Cv</label>
+                       
                                 <input type="file" name="cv" ngModel #cv="ngModel"  class="form-control"   (change)="fileProgressPdf($event.target.files)" accept="application/pdf"  required />
                         <p style="font-size:small" *ngIf="cv.invalid && cv.touched" class="text-danger" >ce champs est obligatoire </p>
                             </div>

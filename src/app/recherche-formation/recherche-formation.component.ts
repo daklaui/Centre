@@ -21,7 +21,9 @@ export class RechercheFormationComponent implements OnInit {
   values = '';
 
   onKey(event: any) { // without type info
+
     this.taskService.searchFormation(event.target.value).subscribe((res)=>{
+      
       this.taskService.formations=res as Formation[];
       });
       this.ngOnInit();

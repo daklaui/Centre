@@ -37,8 +37,13 @@ Liste:object[]=[];
         {
           this.taskService.Candidat_Sessions=resultat as Candidat[];
   
+        });
+        this.taskService.getCanidatParID(res.toString()).subscribe(rst=>{
+          this.taskService.candidat=rst as Candidat;
         })
       })
+
+     
     }
  
    

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
 import { Formation } from 'src/models/Formation.model';
 import { Router } from '@angular/router';
+import { Formateur } from 'src/models/Formateur.model';
 
 @Component({
   selector: 'app-liste-des-formations-formateur',
@@ -33,6 +34,9 @@ export class ListeDesFormationsFormateurComponent implements OnInit {
       {
         this.taskService.sessions=resultat as Formation[];
 
+      });
+      this.taskService.getFormateurParID(res.toString()).subscribe(rst=>{
+        this.taskService.selectedFormateur=rst as Formateur;
       })
     })
    

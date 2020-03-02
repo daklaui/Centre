@@ -16,13 +16,14 @@ export class AdminComponent implements OnInit {
     
   }
   onSubmit(form: NgForm) {
+ 
     var Login={
       email:form.value["username"],
       password:form.value["password"],
     }
      
     this.taskService.authentificationAdmin(Login).subscribe((res)=>{
-       
+  console.log(res["token"]);
       if(res["token"]!="")
       {
         localStorage.setItem("token",res["token"]);

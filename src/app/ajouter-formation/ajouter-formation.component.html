@@ -99,7 +99,7 @@
                             <label  class="col-form-label">Mots cle</label>
                             <div class="row">
                             <div class="col-8">
-                                <input type="text" ngModel #motscle="ngModel" class="form-control input-sm" name="Mots_Cle" placeholder="" />
+                                <input type="text" ngModel id="motscle" #motscle="ngModel" class="form-control input-sm" name="Mots_Cle" placeholder="" />
                             </div>
                                 <div class="col-4">
                                     <button type="button" [disabled]="motscle.invalid && motscle.touched" class="btn btn-success btn-sm" (click)="ajouter_mot(motscle.value)">Ajouter Mot</button>

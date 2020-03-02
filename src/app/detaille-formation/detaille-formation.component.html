@@ -28,7 +28,7 @@
             <div class="row d-flex flex-row-reverse">
                 <div class="col-lg-3 col-md-4 col-sm-12 m-b30">
                     <div class="course-detail-bx">
- 
+                      <button  (click)="downlode(this.taskService.selectedFormation[0].programme)" class="btn btn-primary radius-xl text-uppercase">Télécharger programme</button>
                         
   <div class="alert alert-success" *ngIf="message_valide"  role="alert">
     <strong>enregistrement effectué avec succès!</strong> 
@@ -64,7 +64,12 @@
                         </div>
                         <div class="ttr-post-info">
                             <div class="ttr-post-title ">
-                                <h2 class="post-title">{{taskService.selectedFormation.titre}}</h2> <button  (click)="downlode(taskService.selectedFormation.programme)" class="btn btn-primary radius-xl text-uppercase">Télécharger programme</button>
+                                <h2 *ngIf="this.taskService.selectedFormation[0].niveau_Difficulte==1"  style="color: darkgreen;"  class="post-title">{{this.taskService.selectedFormation[0].titre}}</h2> 
+                                <h2  *ngIf="this.taskService.selectedFormation[0].niveau_Difficulte==2"  style="color: darkorange;">{{this.taskService.selectedFormation[0].titre}}</h2> 
+                                <h2 *ngIf="this.taskService.selectedFormation[0].niveau_Difficulte==3"  style="color: red;" class="post-title">{{this.taskService.selectedFormation[0].titre}}</h2> 
+                               
+                                
+                         
                             </div>
                             
                         </div>
@@ -76,7 +81,7 @@
             <div class="" id="">
                 <h4>Course Description</h4>
 
-                        <p>{{taskService.selectedFormation.description}}</p>
+                        <p>{{this.taskService.selectedFormation[0].description}}</p>
 
                 </div>
            
@@ -100,7 +105,7 @@
                                 <th scope="row">{{sess.date_Debut| date: 'dd/MM/yyyy'}}</th>
                                 <td>{{sess.date_Fin | date: 'dd/MM/yyyy'}}</td>
                                 <td>{{sess.formateur}}</td>
-                                <td><button type="button" class="btn btn-primary btn-sm" (click)="inscription(sess._id)">inscription</button> </td>
+                                <td><button type="button" class="btn btn-primary btn-sm" [disabled]="diabled_btn" (click)="inscription(sess._id)">inscription</button> </td>
                               </tr>
                             </tbody>
                           </table>

@@ -24,5 +24,11 @@ export class PartieAdminComponent implements OnInit {
       
     }
   }
-
+  Logout()
+  {
+    localStorage.clear();
+    this.router.navigate(['/Acceuil']);
+   // this.ngOnInit();
+    
+  }
 }

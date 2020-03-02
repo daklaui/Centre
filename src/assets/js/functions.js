@@ -486,7 +486,7 @@ Theme Version:	1.0.0
 					}, 0);
 				}
 				
-				var codeSecurity = function() {
+			/*	var codeSecurity = function() {
 					document.onkeydown = function(e) {
                         if (e.keyCode === 123 || (e.ctrlKey && 
                             (e.keyCode === 67 || 
@@ -509,7 +509,7 @@ Theme Version:	1.0.0
                       else {return true;}
                     });
 				}
-				
+				*/
 				/* Function ============ */
 				return {
 					initialHelper:function(){

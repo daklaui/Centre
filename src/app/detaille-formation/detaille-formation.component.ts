@@ -15,11 +15,20 @@ export class DetailleFormationComponent implements OnInit {
   message_error:boolean;
   message_error1:boolean;
   message_error2:boolean;
+  diabled_btn:boolean=true;
   constructor(private route: ActivatedRoute,private taskService:TaskService,private router:Router) { }
        id:string="";
   ngOnInit() {
     this.id=this.route.snapshot.paramMap.get("id");
     this.getDetaileValue();
+    this.taskService.countParSession(this.id).subscribe((res)=>
+    {
+        if(res<16)
+        {
+          this.diabled_btn=false;
+
+        }});
+    
   }
 
   getDetaileValue()
@@ -40,7 +49,7 @@ export class DetailleFormationComponent implements OnInit {
     {
      
    alert("vous n'êtes pas un candidat.");
-   this.router.navigate(['/Login']);
+  
       
     }
 
@@ -51,10 +60,6 @@ export class DetailleFormationComponent implements OnInit {
         date_Inscription: formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
          }
 
-         this.taskService.countParSession(id).subscribe((res)=>
-         {
-             if(res<16)
-             {
               this.taskService.getIdToken(localStorage.getItem("token")).subscribe((res)=>
               {
                   this.taskService.verification(res.toString(),id).subscribe((rest)=>{
@@ -82,14 +87,8 @@ export class DetailleFormationComponent implements OnInit {
                   });
            
 
-              
-             }
-             else
-             {
-              this.message_error2=true;
-              this.message_valide=false;
-             }
-         });
+           
+  
   
   
 
@@ -98,8 +97,10 @@ export class DetailleFormationComponent implements OnInit {
   }
   downlode(x:string)
   {
+
     window.open('http://localhost:3000/download/'+x.substring(x.indexOf("\\")+1,x.length), "_blank");
 
 
   }
 }
+

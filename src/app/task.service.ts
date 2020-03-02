@@ -61,7 +61,12 @@ getAllFormateurs(){
 getAllCandidat(){
   return this.http.get("http://localhost:3000/Candidat/read");
 }
-
+getCanidatParID(id:string){
+  return this.http.get("http://localhost:3000/Candidat/read/"+id);
+}
+getFormateurParID(id:string){
+  return this.http.get("http://localhost:3000/Formateur/read/"+id);
+}
 getDetaileFormation(id:string){
   return this.http.get("http://localhost:3000/Formation/read/"+id);
 }
